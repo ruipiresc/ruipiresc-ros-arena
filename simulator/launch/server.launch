@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="number_of_robots" default="2"/>
+
+	<arg name="combined_gui" default="true"/>
+	
+	<arg name="frequency" default="10.0"/>
+	<arg name="mapmerger_frequency" default="0.1"/>
+	<arg name="file_comunication" default="1"/>
+	
+	<arg name="map" default="grid"/>
+	<arg name="resolution" default="0.05"/>
+	<arg name="height" default="20.0"/>
+	<arg name="length" default="20.0"/>
+	<arg name="robot_radius" default="0.2"/>
+	<arg name="real" default="1.0"/>
+
+	<arg name="path_to_arena" default="/home/ap4isr/ruipiresc_ws/src/arena"/>
+
+	<param name="/use_sim_time" value="true"/>
+
+	<include file="$(find simulator)/launch/stage.launch">
+		<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+		<arg name="map" value="$(arg map)"/>
+	</include>
+
+	<include file="$(find aap_map_merger)/launch/aap_map_merger.launch">
+		<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+		<arg name="frequency" value="$(arg frequency)"/>
+		<arg name="merge_frequency" value="$(arg mapmerger_frequency)"/>
+		<arg name="resolution" value="$(arg resolution)"/>
+		<arg name="height" value="$(arg height)"/>
+		<arg name="length" value="$(arg length)"/>
+		<arg name="robot_radius" value="$(arg robot_radius)"/>
+		<arg name="comunication" value="$(arg file_comunication)"/>
+		<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+		<arg name="real" value="$(arg real)"/>
+	</include>
+
+	<group if="$(arg combined_gui)">
+		<include file="$(find simulator)/launch/rviz.launch">
+			<arg name="robot_name" value="combined"/>
+			<arg name="state_publisher" value="false"/>
+			<arg name="show_gui" value="$(arg combined_gui)"/>
+		</include>
+	</group>
+		
+</launch>

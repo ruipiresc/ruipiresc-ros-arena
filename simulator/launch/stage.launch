@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<arg name="number_of_robots"/>
+	<arg name="map"/>
+
+	<master auto="start"/>
+	<param name="/use_sim_time" value="true"/>
+
+	<node pkg="stage_ros" type="stageros" name="stageros" args="$(find simulator)/map/$(arg map)_$(arg number_of_robots)_robots.world" respawn="false">
+		<param name="base_watchdog_timeout" value="0.2"/>
+		<remap from="base_scan" to="base_scan"/>
+	</node>
+
+</launch>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="number_of_robots" default="2"/>
+
+	<arg name="indiviual_gui" default="true"/>
+	
+	<arg name="frequency" default="10.0"/>
+	<arg name="exploration_frequency" default="1.0"/>
+	<arg name="exploration_algorithm" default="coopexp"/>
+	<arg name="file_comunication" default="1"/>
+	<arg name="real" default="1"/>
+	
+	<arg name="map" default="grid"/>
+	<arg name="resolution" default="0.05"/>
+	<arg name="height" default="20.0"/>
+	<arg name="length" default="20.0"/>
+	<arg name="robot_radius" default="0.2"/>
+
+	<arg name="laser_topic" default="base_scan"/>          <!--scan-->
+	<arg name="laser_frame" default="base_laser_link"/>    <!--laser-->
+
+	<arg name="path_to_arena" default="/home/ap4isr/ruipiresc_ws/src/arena"/>
+
+	<param name="/use_sim_time" value="true"/>
+
+	<arg name="robot_number" default="0"/>
+	<arg name="robot_name" default="robot_$(arg robot_number)"/>
+	<arg name="robot_inicial_x" default="1.5"/>
+	<arg name="robot_inicial_y" default="18.5"/>
+	<arg name="robot_inicial_theta" default="-90.0"/>
+
+	<include file="$(find simulator)/launch/stage.launch">
+		<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+		<arg name="map" value="$(arg map)"/>
+	</include>
+	
+	<include file="$(find simulator)/launch/simulated_robot.launch"> 
+		<arg name="robot_number" value="$(arg robot_number)"/>
+		<arg name="robot_name" value="$(arg robot_name)"/>
+		<arg name="robot_inicial_x" value="$(arg robot_inicial_x)"/>
+		<arg name="robot_inicial_y" value="$(arg robot_inicial_y)"/>
+		<arg name="robot_inicial_theta" value="$(arg robot_inicial_theta)"/>
+		<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+		<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+		<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+		<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+		<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+		<arg name="frequency" value="$(arg frequency)"/>
+		<arg name="resolution" value="$(arg resolution)"/>
+		<arg name="height" value="$(arg height)"/>
+		<arg name="length" value="$(arg length)"/>
+		<arg name="robot_radius" value="$(arg robot_radius)"/>
+		<arg name="comunication" value="$(arg file_comunication)"/>
+		<arg name="real" value="$(arg real)"/>
+		<arg name="laser_topic" value="$(arg laser_topic)"/>
+		<arg name="laser_frame" value="$(arg laser_frame)"/>
+	</include>
+		
+</launch>

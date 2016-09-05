@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+
+  	<arg name="number_of_robots"/>
+	<arg name="frequency"/>
+	<arg name="resolution"/>
+	<arg name="height"/>
+	<arg name="length"/>
+	<arg name="robot_radius"/>
+	<arg name="robot_number"/>
+	<arg name="robot_name"/>
+	<arg name="inicial_x"/>
+	<arg name="inicial_y"/>
+	<arg name="inicial_theta"/>
+	<arg name="start_time"/>
+	<arg name="comunication"/>
+	<arg name="real"/>
+
+	<node pkg="aap_frontiers" type="aap_frontiers" name="aap_frontiers" output="screen">
+		<param name="number_of_robots" value="$(arg number_of_robots)"/>
+		<param name="frequency" value="$(arg frequency)"/>
+		<param name="resolution" value="$(arg resolution)"/>
+		<param name="height" value="$(arg height)"/>
+		<param name="length" value="$(arg length)"/>
+		<param name="robot_radius" value="$(arg robot_radius)"/>
+		<param name="robot_number" value="$(arg robot_number)"/>
+		<param name="robot_name" type="string" value="$(arg robot_name)"/>
+		<param name="inicial_x" value="$(arg inicial_x)"/>
+		<param name="inicial_y" value="$(arg inicial_y)"/>
+		<param name="inicial_theta" value="$(arg inicial_theta)"/>
+		<param name="start_time" value="$(arg start_time)"/>
+		<param name="comunication" value="$(arg comunication)"/>
+		<param name="real" value="$(arg real)"/>
+	</node>
+
+</launch>

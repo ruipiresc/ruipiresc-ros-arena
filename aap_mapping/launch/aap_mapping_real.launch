@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<launch>
+
+	<param name="/use_sim_time" value="true"/>
+	
+	<arg name="robot_number" default="true"/>
+	<arg name="robot_name" default="true"/>
+	<arg name="inicial_x" default="true"/>
+	<arg name="inicial_y" default="true"/>
+	<arg name="inicial_theta" default="true"/>
+	<arg name="start_time" default="0.0"/>
+	<arg name="comunication" default="0"/>
+	<arg name="path_to_arena" default="/home/ap4isr/indi/src/arena"/>
+	<arg name="real" default="true"/>
+
+	<arg name="number_of_robots" default="2"/>
+
+	<arg name="indiviual_gui" default="false"/>
+	<arg name="combined_gui" default="true"/>
+
+	<arg name="iterations" default="1.0"/>
+	
+	<arg name="frequency" default="10.0"/>
+	<arg name="mapmerger_frequency" default="0.1"/>
+	<arg name="exploration_frequency" default="1.0"/>
+	<arg name="exploration_algorithm" default="burgard"/>
+	<arg name="file_comunication" default="0"/>
+	
+	<arg name="map" default="grid"/>
+	<arg name="resolution" default="0.05"/>
+	<arg name="height" default="20.0"/>
+	<arg name="length" default="20.0"/>
+	<arg name="robot_radius" default="0.2"/>
+
+	<node pkg="aap_mapping" type="aap_mapping" name="aap_mapping" output="screen">
+		<param name="number_of_robots" value="$(arg number_of_robots)"/>
+		<param name="frequency" value="$(arg frequency)"/>
+		<param name="resolution" value="$(arg resolution)"/>
+		<param name="height" value="$(arg height)"/>
+		<param name="length" value="$(arg length)"/>
+		<param name="robot_radius" value="$(arg robot_radius)"/>
+		<param name="robot_number" value="$(arg robot_number)"/>
+		<param name="robot_name" type="string" value="$(arg robot_name)"/>
+		<param name="inicial_x" value="$(arg inicial_x)"/>
+		<param name="inicial_y" value="$(arg inicial_y)"/>
+		<param name="inicial_theta" value="$(arg inicial_theta)"/>
+		<param name="start_time" value="$(arg start_time)"/>
+		<param name="comunication" value="$(arg comunication)"/>
+		<param name="occupiedCellProb" value="0.8"/>
+		<param name="emptyCellProb" value="0.2"/>
+		<param name="path" type="string" value="$(arg path_to_arena)"/>
+		<param name="real" value="$(arg real)"/>
+	</node>
+
+</launch>

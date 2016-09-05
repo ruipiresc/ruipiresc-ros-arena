@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot_name"/>
+	<arg name="laser_topic"/>
+	<arg name="laser_frame"/>
+
+	<node pkg="move_base" type="move_base" respawn="false" name="move_base">
+		<rosparam file="$(find simulator)/move_base/costmap_common_params.yaml" command="load" ns="global_costmap" />
+		<rosparam file="$(find simulator)/move_base/costmap_common_params.yaml" command="load" ns="local_costmap" />
+		<rosparam file="$(find simulator)/move_base/local_costmap_params.yaml" command="load" />
+		<rosparam file="$(find simulator)/move_base/global_costmap_params.yaml" command="load" />
+		<rosparam file="$(find simulator)/move_base/base_local_planner_params.yaml" command="load" />
+		<rosparam file="$(find simulator)/move_base/move_base_params.yaml" command="load"/>
+
+		<param name="global_costmap/laser_scan_sensor/sensor_frame" value="/$(arg robot_name)/$(arg laser_frame)"/>
+        <param name="global_costmap/laser_scan_sensor/topic" value="/$(arg robot_name)/$(arg laser_topic)"/>
+        <param name="global_costmap/robot_base_frame" value="/$(arg robot_name)/base_link"/>
+        <param name="global_costmap/global_frame" value="/map"/>
+        <param name="local_costmap/global_frame" value="/$(arg robot_name)/odom"/>
+        <param name="local_costmap/laser_scan_sensor/sensor_frame" value="/$(arg robot_name)/$(arg laser_frame)"/>
+        <param name="local_costmap/laser_scan_sensor/topic" value="/$(arg robot_name)/$(arg laser_topic)"/>
+        <param name="local_costmap/robot_base_frame" value="/$(arg robot_name)/base_link"/> 
+	</node>
+
+</launch>

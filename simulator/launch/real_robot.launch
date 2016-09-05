@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="show_gui" default="true"/>
+	<arg name="explore" default="true"/>
+	
+	<arg name="frequency" default="10.0"/>
+	<arg name="exploration_frequency" default="1.0"/>
+	<arg name="exploration_algorithm" default="coopexp"/>
+	<arg name="file_comunication" default="0"/>
+	
+	<arg name="map" default="grid"/>
+	<arg name="resolution" default="0.05"/>
+	<arg name="height" default="20.0"/>
+	<arg name="length" default="20.0"/>
+	<arg name="robot_radius" default="0.2"/>
+
+	<arg name="path_to_arena" default="/home/ap4isr/ruipiresc_ws/src/arena"/>
+	
+	<arg name="laser_topic" default="scan"/>     <!--scan-->
+	<arg name="laser_frame" default="laser"/>    <!--laser-->
+
+	<arg name="mapping_start_time" default="3.0"/>
+	<arg name="frontiers_start_time" default="6.0"/>
+	<arg name="exploration_algorithms_start_time" default="9.0"/>
+
+	<arg name="robot_number" default="0"/>
+	<arg name="robot_name" default="robot_$(arg robot_number)"/>
+	<arg name="robot_inicial_x" default="4.0"/>
+	<arg name="robot_inicial_y" default="4.0"/>
+	<arg name="robot_inicial_theta" default="90.0"/>
+	
+	<include file="$(find aap_mapping)/launch/aap_mapping.launch">
+		<arg name="number_of_robots" value="1"/>
+		<arg name="frequency" value="$(arg frequency)"/>
+		<arg name="resolution" value="$(arg resolution)"/>
+		<arg name="height" value="$(arg height)"/>
+		<arg name="length" value="$(arg length)"/>
+		<arg name="robot_radius" value="$(arg robot_radius)"/>
+		<arg name="robot_number" value="$(arg robot_number)"/>
+		<arg name="robot_name" value="$(arg robot_name)"/>
+		<arg name="inicial_x" value="$(arg robot_inicial_x)"/>
+		<arg name="inicial_y" value="$(arg robot_inicial_y)"/>
+		<arg name="inicial_theta" value="$(arg robot_inicial_theta)"/>
+		<arg name="start_time" value="$(arg mapping_start_time)"/>
+		<arg name="comunication" value="$(arg file_comunication)"/>
+		<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+		<arg name="real" value="0"/>
+		<arg name="laser_topic" value="$(arg laser_topic)"/>
+		<arg name="laser_frame" value="$(arg laser_frame)"/>
+	</include>
+
+	<!--<node pkg="amcl" type="amcl" name="amcl">
+		<param name="odom_model_type" value="diff"/>
+		<param name="odom_alpha5" value="0.1"/>
+		<param name="transform_tolerance" value="0.2" />
+		<param name="gui_publish_rate" value="10.0"/>
+		<param name="laser_max_beams" value="30"/>
+		<param name="min_particles" value="500"/>
+		<param name="max_particles" value="5000"/>
+		<param name="kld_err" value="0.05"/>
+		<param name="kld_z" value="0.99"/>
+		<param name="odom_alpha1" value="0.2"/>
+		<param name="odom_alpha2" value="0.2"/>
+		<param name="odom_alpha3" value="0.8"/>
+		<param name="odom_alpha4" value="0.2"/>
+		<param name="laser_z_hit" value="0.5"/>
+		<param name="laser_z_short" value="0.05"/>
+		<param name="laser_z_max" value="0.05"/>
+		<param name="laser_z_rand" value="0.5"/>
+		<param name="laser_sigma_hit" value="0.2"/>
+		<param name="laser_lambda_short" value="0.1"/>
+		<param name="laser_lambda_short" value="0.1"/>
+		<param name="laser_model_type" value="likelihood_field"/>
+		<param name="laser_likelihood_max_dist" value="2.0"/>
+		<param name="update_min_d" value="0.2"/>
+		<param name="update_min_a" value="0.5"/>
+		<param name="odom_frame_id" value="odom"/>
+		<param name="resample_interval" value="1"/>
+		<param name="transform_tolerance" value="0.1"/>
+		<param name="recovery_alpha_slow" value="0.0"/>
+		<param name="recovery_alpha_fast" value="0.0"/>
+		
+		<param name="/base_frame_id" value="/base_link"/>
+	    <param name="/odom_frame_id" value="/odom"/>
+	    <param name="/global_frame_id" value="map"/>
+	</node>-->
+
+	<node pkg="move_base" type="move_base" respawn="false" name="move_base">
+		<rosparam file="$(find simulator)/move_base/costmap_common_params.yaml" command="load" ns="global_costmap" />
+		<rosparam file="$(find simulator)/move_base/costmap_common_params.yaml" command="load" ns="local_costmap" />
+		<rosparam file="$(find simulator)/move_base/local_costmap_params.yaml" command="load" />
+		<rosparam file="$(find simulator)/move_base/global_costmap_params.yaml" command="load" />
+		<rosparam file="$(find simulator)/move_base/base_local_planner_params_slow.yaml" command="load" />
+		<rosparam file="$(find simulator)/move_base/move_base_params.yaml" command="load"/>
+
+		<param name="global_costmap/laser_scan_sensor/sensor_frame" value="/$(arg laser_frame)"/>
+        <param name="global_costmap/laser_scan_sensor/topic" value="/$(arg laser_topic)"/>
+        <param name="global_costmap/robot_base_frame" value="/base_link"/>
+        <param name="global_costmap/global_frame" value="/map"/>
+        <param name="local_costmap/global_frame" value="/odom"/>
+        <param name="local_costmap/laser_scan_sensor/sensor_frame" value="/$(arg laser_frame)"/>
+        <param name="local_costmap/laser_scan_sensor/topic" value="/$(arg laser_topic)"/>
+        <param name="local_costmap/robot_base_frame" value="/base_link"/> 
+	</node>
+
+	<include file="$(find aap_frontiers)/launch/aap_frontiers.launch">
+		<arg name="number_of_robots" value="1"/>
+		<arg name="frequency" value="$(arg exploration_frequency)"/>
+		<arg name="resolution" value="$(arg resolution)"/>
+		<arg name="height" value="$(arg height)"/>
+		<arg name="length" value="$(arg length)"/>
+		<arg name="robot_radius" value="$(arg robot_radius)"/>
+		<arg name="robot_number" value="$(arg robot_number)"/>
+		<arg name="robot_name" value="$(arg robot_name)"/>
+		<arg name="inicial_x" value="$(arg robot_inicial_x)"/>
+		<arg name="inicial_y" value="$(arg robot_inicial_y)"/>
+		<arg name="inicial_theta" value="$(arg robot_inicial_theta)"/>
+		<arg name="comunication" value="$(arg file_comunication)"/>
+		<arg name="start_time" value="$(arg frontiers_start_time)"/>
+		<arg name="real" value="0"/>
+	</include>
+
+	<group if="$(arg explore)">
+		<include file="$(arg path_to_arena)/algorithms/$(arg exploration_algorithm)/launch/$(arg exploration_algorithm).launch">
+			<arg name="number_of_robots" value="1"/>
+			<arg name="frequency" value="$(arg exploration_frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="robot_number" value="$(arg robot_number)"/>
+			<arg name="robot_name" value="$(arg robot_name)"/>
+			<arg name="inicial_x" value="$(arg robot_inicial_x)"/>
+			<arg name="inicial_y" value="$(arg robot_inicial_y)"/>
+			<arg name="inicial_theta" value="$(arg robot_inicial_theta)"/>
+			<arg name="start_time" value="$(arg exploration_algorithms_start_time)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="real" value="0"/>
+		</include>
+	</group>	
+
+	<arg name="model" default="$(find pioneer_model)/pioneer3dx.xml"/>
+	<arg name="gui" default="False" />
+
+	<param name="robot_description" textfile="$(arg model)" />
+	<param name="use_gui" value="$(arg gui)"/>
+
+	<group if="$(arg show_gui)">
+		<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" ></node>
+	</group>	
+
+	<group if="$(arg show_gui)">
+		<node name="rviz" pkg="rviz" type="rviz" args="-d $(find simulator)/rviz/gui_robot.rviz" ></node>
+	</group>
+		
+</launch>

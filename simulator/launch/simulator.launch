@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="iterations"/>
+	<arg name="frequency"/>
+	<arg name="path_to_arena"/>
+
+	<node pkg="simulator" type="simulator" name="simulator" output="screen">
+		<param name="iterations" value="$(arg iterations)"/>
+		<param name="frequency" value="$(arg frequency)"/>
+		<param name="path" type="string" value="$(arg path_to_arena)"/>
+	</node>
+
+</launch>

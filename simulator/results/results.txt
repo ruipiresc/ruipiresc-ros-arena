@@ -1,0 +1,239 @@
+SIMULATOR saved data
+SIMULATOR: Finish test1 in 107(s), map ratio was 0.8747
+SIMULATOR: Finish test1 in 104.9(s), map ratio was 0.869337
+SIMULATOR: Finish test1 in 91.3(s), map ratio was 0.868613
+SIMULATOR: Finish test1 in 128.5(s), map ratio was 0.869
+SIMULATOR: Finish test1 in 124.9(s), map ratio was 0.871919
+SIMULATOR: Finish test1 in 155(s), map ratio was 0.859712
+SIMULATOR: Finish test1 in 104.1(s), map ratio was 0.874644
+SIMULATOR: Finish test1 in 114.3(s), map ratio was 0.884919
+SIMULATOR: Finish test1 in 75.6(s), map ratio was 0.872881
+SIMULATOR: Finish test2 in 98.6(s), map ratio was 0.881825
+SIMULATOR: Finish test3 in 77.3(s), map ratio was 0.884606
+SIMULATOR: Finish test4 in 124.8(s), map ratio was 0.879212
+---
+SIMULATOR: Finish test1 in 136.8(s), map ratio was 0.86945
+SIMULATOR: Finish test1 in 227.3(s), map ratio was 0.857725
+SIMULATOR: Finish test1 in 83.6(s), map ratio was 0.877481
+SIMULATOR: Finish test1 in 328.4(s), map ratio was 0.857994
+SIMULATOR: Finish test1 in 144.1(s), map ratio was 0.878088
+SIMULATOR: Finish test1 in 155.5(s), map ratio was 0.870587
+SIMULATOR: Finish test1 in 137.6(s), map ratio was 0.875606
+SIMULATOR: Finish test1 in 151.5(s), map ratio was 0.875988
+SIMULATOR: Finish test1 in 126.3(s), map ratio was 0.873069
+SIMULATOR: Finish test1 in 149.8(s), map ratio was 0.869263
+SIMULATOR: Finish test1 in 154.9(s), map ratio was 0.870012
+SIMULATOR: Finish test1 in 141.2(s), map ratio was 0.876706
+SIMULATOR: Finish test1 in 155(s), map ratio was 0.881537
+SIMULATOR: Finish test2 in 149(s), map ratio was 0.882737
+SIMULATOR: Finish test1 in 147.1(s), map ratio was 0.871088
+SIMULATOR: Finish test1 in 305.8(s), map ratio was 0.9995
+SIMULATOR: Finish test1 in 175.1(s), map ratio was 0.928244
+SIMULATOR: Finish test1 in 126.9(s), map ratio was 0.748269
+---3* grif alpha = 0.1
+SIMULATOR: Finish test1 in 141.2(s), map ratio was 0.879844
+SIMULATOR: Finish test2 in 142.5(s), map ratio was 0.875444
+SIMULATOR: Finish test3 in 170.2(s), map ratio was 0.873519
+SIMULATOR: Finish test4 in 127.4(s), map ratio was 0.876469
+SIMULATOR: Finish test5 in 166.5(s), map ratio was 0.879794
+SIMULATOR: Finish test6 in 166.4(s), map ratio was 0.877637
+SIMULATOR: Finish test7 in 135.3(s), map ratio was 0.8812
+SIMULATOR: Finish test8 in 129.4(s), map ratio was 0.872756
+SIMULATOR: Finish test9 in 142.4(s), map ratio was 0.874831
+---3* grif alpha = 0.05
+SIMULATOR: Finish test1 in 150.4(s), map ratio was 0.879256
+SIMULATOR: Finish test2 in 149.2(s), map ratio was 0.873875
+SIMULATOR: Finish test1 in 132.5(s), map ratio was 0.865663
+SIMULATOR: Finish test2 in 144.2(s), map ratio was 0.876644
+---3* grif alpha = 0.2
+SIMULATOR: Finish test1 in 128.2(s), map ratio was 0.879431
+SIMULATOR: Finish test2 in 134.4(s), map ratio was 0.874469
+SIMULATOR: Finish test3 in 134.4(s), map ratio was 0.871369
+SIMULATOR: Finish test1 in 141.2(s), map ratio was 0.870519
+SIMULATOR: Finish test2 in 147.4(s), map ratio was 0.877144
+SIMULATOR: Finish test3 in 131.3(s), map ratio was 0.879763
+---3* grif alpha = 0.1
+SIMULATOR: Finish test1 in 140.3(s), map ratio was 0.87655
+SIMULATOR: Finish test2 in 129.1(s), map ratio was 0.8782
+SIMULATOR: Finish test3 in 161.3(s), map ratio was 0.876556
+SIMULATOR: Finish test1 in 133.1(s), map ratio was 0.875931
+SIMULATOR: Finish test2 in 161.1(s), map ratio was 0.878069
+---3* grif alpha = 0.15
+SIMULATOR: Finish test1 in 135.1(s), map ratio was 0.881519
+SIMULATOR: Finish test2 in 141.5(s), map ratio was 0.873381
+SIMULATOR: Finish test3 in 133.1(s), map ratio was 0.880044
+SIMULATOR: Finish test1 in 142.4(s), map ratio was 0.881006
+SIMULATOR: Finish test1 in 140.3(s), map ratio was 0.873363
+SIMULATOR: Finish test2 in 159.4(s), map ratio was 0.875463
+SIMULATOR: Finish test3 in 166.5(s), map ratio was 0.871181
+---3* grif alpha = 0.2
+SIMULATOR: Finish test1 in 133.3(s), map ratio was 0.875694
+SIMULATOR: Finish test2 in 133.5(s), map ratio was 0.878731
+SIMULATOR: Finish test3 in 162.4(s), map ratio was 0.876831
+---3* grif alpha = 0.08
+SIMULATOR: Finish test1 in 128.5(s), map ratio was 0.874544
+SIMULATOR: Finish test2 in 150.1(s), map ratio was 0.880919
+SIMULATOR: Finish test1 in 143.6(s), map ratio was 0.876769
+SIMULATOR: Finish test2 in 165.3(s), map ratio was 0.8781
+SIMULATOR: Finish test3 in 172(s), map ratio was 0.879475
+---3* grif alpha = 0.1
+SIMULATOR: Finish test1 in 140.2(s), map ratio was 0.877413
+SIMULATOR: Finish test2 in 153.3(s), map ratio was 0.878675
+SIMULATOR: Finish test3 in 134.1(s), map ratio was 0.873944
+SIMULATOR: Finish test1 in 136.1(s), map ratio was 0.880394
+SIMULATOR: Finish test2 in 157.3(s), map ratio was 0.878975
+SIMULATOR: Finish test3 in 172.4(s), map ratio was 0.879794
+
+---Calibracao do alfa
+138.3 0.876575 0.1
+120.5 0.879881 0.1
+136.2 0.876775 0.1
+130.2 0.880244 0.1
+134.6 0.878581 0.1
+136.1 0.877919 0.1
+132.2 0.8799 0.1
+137.1 0.877456 0.1
+141.2 0.878506 0.125
+127.1 0.875456 0.125
+136.1 0.881894 0.125
+132.2 0.878613 0.125
+144.2 0.879463 0.125
+127.3 0.879838 0.125
+124.4 0.8774 0.125
+125.5 0.880106 0.125
+139.1 0.872775 0.15
+125.2 0.876475 0.15
+136.1 0.875162 0.15
+129.1 0.873387 0.15
+130.4 0.877506 0.15
+145.2 0.882363 0.15
+129.1 0.879681 0.15
+145.5 0.883069 0.15
+158.4 0.879962 0.175
+130.4 0.882194 0.175
+137.2 0.877956 0.175
+120.1 0.876706 0.175
+139.2 0.872125 0.175
+167.4 0.877675 0.175
+145.5 0.87835 0.175
+128.2 0.878219 0.175
+150.4 0.87815 0.2
+132.2 0.87965 0.2
+130.1 0.871862 0.2
+161.6 0.881281 0.2
+166.2 0.874175 0.2
+131.3 0.880731 0.2
+149.3 0.879387 0.2
+140.1 0.879631 0.2
+
+---Calibracao do beta
+141.2 0.878506 0.8
+127.1 0.875456 0.8
+136.1 0.881894 0.8
+132.2 0.878613 0.8
+144.2 0.879463 0.8
+127.3 0.879838 0.8
+124.4 0.8774 0.8
+125.5 0.880106 0.8
+128.1 0.877731 0.9
+135.4 0.870869 0.9
+135.2 0.875281 0.9
+154.4 0.881456 0.9
+136.4 0.878944 0.9
+139.1 0.880225 0.9
+144.3 0.876006 0.9
+139.5 0.871337 0.9
+137.6 0.881425 0.7
+147.2 0.876919 0.7
+134.1 0.880981 0.7
+124.4 0.885006 0.7
+134.2 0.880337 0.7
+137.4 0.883106 0.7
+165.2 0.882106 0.7
+130.1 0.881769 0.7
+117.4 0.875231 1
+140.3 0.878481 1
+126.5 0.881381 1
+127.1 0.882238 1
+133.2 0.881719 1
+136.2 0.869981 1
+132.4 0.87405 1
+131.4 0.871731 1
+131.3 0.875012 1
+127.2 0.877363 1
+142.5 0.872244 0.9
+135.2 0.869637 0.9
+137.3 0.876838 0.9
+118.5 0.879962 0.9
+134.5 0.873531 0.9
+
+---Calibracao do gama
+141.2 0.878506 1.0
+127.1 0.875456 1.0
+136.1 0.881894 1.0
+132.2 0.878613 1.0
+144.2 0.879463 1.0
+127.3 0.879838 1.0
+124.4 0.8774 1.0
+125.5 0.880106 1.0
+134.4 0.872838 1.1
+144.2 0.879881 1.1
+118.4 0.879175 1.1
+142.2 0.873975 1.1
+132.3 0.876306 1.1
+134.4 0.877687 1.1
+139.4 0.882056 1.1
+124.1 0.873569 1.1
+135.1 0.888463 0.9
+130.1 0.877550 0.9
+139.4 0.882781 0.9
+138.3 0.883425 0.9
+148.1 0.881556 0.9
+132.2 0.881494 0.9
+139.1 0.878062 0.9
+128.5 0.881225 0.9
+82.4 0.908744 0.9
+
+---Calibracao do omega
+141.2 0.878506 1.0
+127.1 0.875456 1.0
+136.1 0.881894 1.0
+132.2 0.878613 1.0
+144.2 0.879463 1.0
+127.3 0.879838 1.0
+124.4 0.8774 1.0
+125.5 0.880106 1.0
+155.3 0.875719 0.9
+138.2 0.87375 0.9
+136.1 0.879819 0.9
+153.3 0.874 0.9
+150.2 0.869537 0.9
+124.3 0.875587 0.9
+137.3 0.878969 0.9
+144.2 0.877125 0.9
+146.2 0.881944 1.1
+127.4 0.882994 1.1
+127.1 0.88715 1.1
+180.4 0.881406 1.1
+145.5 0.8821 1.1
+140.6 0.883794 1.1
+126.5 0.880413 1.1
+163.5 0.883806 1.1
+
+---testes finais
+146.3 0.878669 1
+137.6 0.875637 1
+136.4 0.881537 1
+151.1 0.882069 1
+142.1 0.872575 1
+141.5 0.880519 1
+152.3 0.882381 1
+146.6 0.88095 1
+136.4 0.878138 1
+148.1 0.881925 1
+151.6 0.876956 1
+184.7 0.996263 1
+102.1 0.740469 1
+120.2 0.999019 1
+118.2 0.999088 1
+145.1 0.998131 1

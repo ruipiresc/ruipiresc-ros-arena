@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="robot_name"/>
+	<arg name="state_publisher"/>
+	<arg name="show_gui"/>
+	<arg name="model" default="$(find pioneer_model)/pioneer3dx.xml"/>
+	<arg name="gui" default="False" />
+
+	<param name="robot_description" textfile="$(arg model)" />
+	<param name="use_gui" value="$(arg gui)"/>
+
+	<group if="$(arg state_publisher)">
+		<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"></node>
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"></node>
+	</group>	
+
+	<group if="$(arg show_gui)">
+		<node name="rviz" pkg="rviz" type="rviz" args="-d $(find simulator)/rviz/gui_$(arg robot_name).rviz"></node>
+	</group>
+
+</launch>

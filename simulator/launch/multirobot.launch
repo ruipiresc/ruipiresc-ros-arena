@@ -1,0 +1,2030 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="number_of_robots" default="4"/>
+
+	<arg name="indiviual_gui" default="false"/>
+	<arg name="combined_gui" default="true"/>
+
+	<arg name="iterations" default="1.0"/>
+	
+	<arg name="frequency" default="10.0"/>
+	<arg name="mapmerger_frequency" default="1.0"/>
+	<arg name="exploration_frequency" default="1.0"/>
+	<arg name="exploration_algorithm" default="coopexp"/>
+	<arg name="file_comunication" default="0"/>
+
+	<arg name="laser_topic" default="base_scan"/>          <!--scan-->
+	<arg name="laser_frame" default="base_laser_link"/>    <!--laser-->
+
+	<arg name="map" default="grid"/>
+	<arg name="resolution" default="0.05"/>
+	<arg name="height" default="20.0"/>
+	<arg name="length" default="20.0"/>
+	<arg name="robot_radius" default="0.2"/>
+
+	<arg name="path_to_arena" default="/home/ap4isr/ruipiresc_ws/src/arena"/>
+	<!--<arg name="path_to_arena" default="/home/bot/catkin_ws/src/arena"/>-->
+
+	<arg name="robot2_on" default="true"/>
+	<arg name="robot3_on" default="true"/>
+	<arg name="robot4_on" default="false"/>
+	<arg name="robot5_on" default="false"/>
+	<arg name="robot6_on" default="false"/>
+	<arg name="robot7_on" default="false"/>
+	<arg name="robot8_on" default="false"/>
+	<arg name="robot9_on" default="false"/>
+	<arg name="robot10_on" default="false"/>
+	<arg name="robot11_on" default="false"/>
+	<arg name="robot12_on" default="false"/>
+	<arg name="robot13_on" default="false"/>
+	<arg name="robot14_on" default="false"/>
+	<arg name="robot15_on" default="false"/>
+	<arg name="robot16_on" default="false"/>
+	<arg name="robot17_on" default="false"/>
+	<arg name="robot18_on" default="false"/>
+	<arg name="robot19_on" default="false"/>
+	<arg name="robot20_on" default="false"/>
+	<arg name="robot21_on" default="false"/>
+	<arg name="robot22_on" default="false"/>
+	<arg name="robot23_on" default="false"/>
+	<arg name="robot24_on" default="false"/>
+	<arg name="robot25_on" default="false"/>
+	<arg name="robot26_on" default="false"/>
+	<arg name="robot27_on" default="false"/>
+	<arg name="robot28_on" default="false"/>
+	<arg name="robot29_on" default="false"/>
+	<arg name="robot30_on" default="false"/>
+	<arg name="robot31_on" default="false"/>
+	<arg name="robot32_on" default="false"/>
+	<arg name="robot33_on" default="false"/>
+	<arg name="robot34_on" default="false"/>
+	<arg name="robot35_on" default="false"/>
+	<arg name="robot36_on" default="false"/>
+	<arg name="robot37_on" default="false"/>
+	<arg name="robot38_on" default="false"/>
+	<arg name="robot39_on" default="false"/>
+	<arg name="robot40_on" default="false"/>
+	<arg name="robot41_on" default="false"/>
+	<arg name="robot42_on" default="false"/>
+	<arg name="robot43_on" default="false"/>
+	<arg name="robot44_on" default="false"/>
+	<arg name="robot45_on" default="false"/>
+	<arg name="robot46_on" default="false"/>
+	<arg name="robot47_on" default="false"/>
+	<arg name="robot48_on" default="false"/>
+	<arg name="robot49_on" default="false"/>
+	<arg name="robot50_on" default="false"/>
+	<arg name="robot51_on" default="false"/>
+	<arg name="robot52_on" default="false"/>
+	<arg name="robot53_on" default="false"/>
+	<arg name="robot54_on" default="false"/>
+	<arg name="robot55_on" default="false"/>
+	<arg name="robot56_on" default="false"/>
+	<arg name="robot57_on" default="false"/>
+	<arg name="robot58_on" default="false"/>
+	<arg name="robot59_on" default="false"/>
+	<arg name="robot60_on" default="false"/>
+	<arg name="robot61_on" default="false"/>
+	<arg name="robot62_on" default="false"/>
+	<arg name="robot63_on" default="false"/>
+
+	<arg name="robot0_number" default="0"/>
+	<arg name="robot0_name" default="robot_$(arg robot0_number)"/>
+	<arg name="robot0_inicial_x" default="-8.5"/>
+	<arg name="robot0_inicial_y" default="8.5"/>
+	<arg name="robot0_inicial_theta" default="90.0"/>
+
+	<arg name="robot1_number" default="1"/>
+	<arg name="robot1_name" default="robot_$(arg robot1_number)"/>
+	<arg name="robot1_inicial_x" default="8.5"/>
+	<arg name="robot1_inicial_y" default="8.5"/>
+	<arg name="robot1_inicial_theta" default="90.0"/>
+
+	<arg name="robot2_number" default="2"/>
+	<arg name="robot2_name" default="robot_$(arg robot2_number)"/>
+	<arg name="robot2_inicial_x" default="18.5"/>
+	<arg name="robot2_inicial_y" default="1.5"/>
+	<arg name="robot2_inicial_theta" default="135.0"/>
+
+	<arg name="robot3_number" default="3"/>
+	<arg name="robot3_name" default="robot_$(arg robot3_number)"/>
+	<arg name="robot3_inicial_x" default="1.5"/>
+	<arg name="robot3_inicial_y" default="1.5"/>
+	<arg name="robot3_inicial_theta" default="45.0"/>
+
+	<arg name="robot4_number" default="4"/>
+	<arg name="robot4_name" default="robot_$(arg robot4_number)"/>
+	<arg name="robot4_inicial_x" default="1.0"/>
+	<arg name="robot4_inicial_y" default="1.0"/>
+	<arg name="robot4_inicial_theta" default="0.0"/>
+
+	<arg name="robot5_number" default="5"/>
+	<arg name="robot5_name" default="robot_$(arg robot5_number)"/>
+	<arg name="robot5_inicial_x" default="1.0"/>
+	<arg name="robot5_inicial_y" default="1.0"/>
+	<arg name="robot5_inicial_theta" default="0.0"/>
+
+	<arg name="robot6_number" default="6"/>
+	<arg name="robot6_name" default="robot_$(arg robot6_number)"/>
+	<arg name="robot6_inicial_x" default="1.0"/>
+	<arg name="robot6_inicial_y" default="1.0"/>
+	<arg name="robot6_inicial_theta" default="0.0"/>
+
+	<arg name="robot8_number" default="8"/>
+	<arg name="robot8_name" default="robot_$(arg robot8_number)"/>
+	<arg name="robot8_inicial_x" default="1.0"/>
+	<arg name="robot8_inicial_y" default="1.0"/>
+	<arg name="robot8_inicial_theta" default="0.0"/>
+
+	<arg name="robot9_number" default="9"/>
+	<arg name="robot9_name" default="robot_$(arg robot9_number)"/>
+	<arg name="robot9_inicial_x" default="1.0"/>
+	<arg name="robot9_inicial_y" default="1.0"/>
+	<arg name="robot9_inicial_theta" default="0.0"/>
+
+	<arg name="robot10_number" default="10"/>
+	<arg name="robot10_name" default="robot_$(arg robot10_number)"/>
+	<arg name="robot10_inicial_x" default="1.0"/>
+	<arg name="robot10_inicial_y" default="1.0"/>
+	<arg name="robot10_inicial_theta" default="0.0"/>
+
+	<arg name="robot11_number" default="11"/>
+	<arg name="robot11_name" default="robot_$(arg robot11_number)"/>
+	<arg name="robot11_inicial_x" default="1.0"/>
+	<arg name="robot11_inicial_y" default="1.0"/>
+	<arg name="robot11_inicial_theta" default="0.0"/>
+
+	<arg name="robot12_number" default="12"/>
+	<arg name="robot12_name" default="robot_$(arg robot12_number)"/>
+	<arg name="robot12_inicial_x" default="1.0"/>
+	<arg name="robot12_inicial_y" default="1.0"/>
+	<arg name="robot12_inicial_theta" default="0.0"/>
+
+	<arg name="robot13_number" default="13"/>
+	<arg name="robot13_name" default="robot_$(arg robot13_number)"/>
+	<arg name="robot13_inicial_x" default="1.0"/>
+	<arg name="robot13_inicial_y" default="1.0"/>
+	<arg name="robot13_inicial_theta" default="0.0"/>
+
+	<arg name="robot14_number" default="14"/>
+	<arg name="robot14_name" default="robot_$(arg robot14_number)"/>
+	<arg name="robot14_inicial_x" default="1.0"/>
+	<arg name="robot14_inicial_y" default="1.0"/>
+	<arg name="robot14_inicial_theta" default="0.0"/>
+
+	<arg name="robot15_number" default="15"/>
+	<arg name="robot15_name" default="robot_$(arg robot15_number)"/>
+	<arg name="robot15_inicial_x" default="1.0"/>
+	<arg name="robot15_inicial_y" default="1.0"/>
+	<arg name="robot15_inicial_theta" default="0.0"/>
+
+	<arg name="robot16_number" default="16"/>
+	<arg name="robot16_name" default="robot_$(arg robot16_number)"/>
+	<arg name="robot16_inicial_x" default="1.0"/>
+	<arg name="robot16_inicial_y" default="1.0"/>
+	<arg name="robot16_inicial_theta" default="0.0"/>
+
+	<arg name="robot18_number" default="18"/>
+	<arg name="robot18_name" default="robot_$(arg robot18_number)"/>
+	<arg name="robot18_inicial_x" default="1.0"/>
+	<arg name="robot18_inicial_y" default="1.0"/>
+	<arg name="robot18_inicial_theta" default="0.0"/>
+
+	<arg name="robot19_number" default="19"/>
+	<arg name="robot19_name" default="robot_$(arg robot19_number)"/>
+	<arg name="robot19_inicial_x" default="1.0"/>
+	<arg name="robot19_inicial_y" default="1.0"/>
+	<arg name="robot19_inicial_theta" default="0.0"/>
+
+	<arg name="robot20_number" default="20"/>
+	<arg name="robot20_name" default="robot_$(arg robot20_number)"/>
+	<arg name="robot20_inicial_x" default="1.0"/>
+	<arg name="robot20_inicial_y" default="1.0"/>
+	<arg name="robot20_inicial_theta" default="0.0"/>
+
+	<arg name="robot21_number" default="21"/>
+	<arg name="robot21_name" default="robot_$(arg robot21_number)"/>
+	<arg name="robot21_inicial_x" default="1.0"/>
+	<arg name="robot21_inicial_y" default="1.0"/>
+	<arg name="robot21_inicial_theta" default="0.0"/>
+
+	<arg name="robot22_number" default="22"/>
+	<arg name="robot22_name" default="robot_$(arg robot22_number)"/>
+	<arg name="robot22_inicial_x" default="1.0"/>
+	<arg name="robot22_inicial_y" default="1.0"/>
+	<arg name="robot22_inicial_theta" default="0.0"/>
+
+	<arg name="robot23_number" default="23"/>
+	<arg name="robot23_name" default="robot_$(arg robot23_number)"/>
+	<arg name="robot23_inicial_x" default="1.0"/>
+	<arg name="robot23_inicial_y" default="1.0"/>
+	<arg name="robot23_inicial_theta" default="0.0"/>
+
+	<arg name="robot24_number" default="24"/>
+	<arg name="robot24_name" default="robot_$(arg robot24_number)"/>
+	<arg name="robot24_inicial_x" default="1.0"/>
+	<arg name="robot24_inicial_y" default="1.0"/>
+	<arg name="robot24_inicial_theta" default="0.0"/>
+
+	<arg name="robot25_number" default="25"/>
+	<arg name="robot25_name" default="robot_$(arg robot25_number)"/>
+	<arg name="robot25_inicial_x" default="1.0"/>
+	<arg name="robot25_inicial_y" default="1.0"/>
+	<arg name="robot25_inicial_theta" default="0.0"/>
+
+	<arg name="robot26_number" default="26"/>
+	<arg name="robot26_name" default="robot_$(arg robot26_number)"/>
+	<arg name="robot26_inicial_x" default="1.0"/>
+	<arg name="robot26_inicial_y" default="1.0"/>
+	<arg name="robot26_inicial_theta" default="0.0"/>
+
+	<arg name="robot27_number" default="27"/>
+	<arg name="robot27_name" default="robot_$(arg robot27_number)"/>
+	<arg name="robot27_inicial_x" default="1.0"/>
+	<arg name="robot27_inicial_y" default="1.0"/>
+	<arg name="robot27_inicial_theta" default="0.0"/>
+
+	<arg name="robot28_number" default="28"/>
+	<arg name="robot28_name" default="robot_$(arg robot28_number)"/>
+	<arg name="robot28_inicial_x" default="1.0"/>
+	<arg name="robot28_inicial_y" default="1.0"/>
+	<arg name="robot28_inicial_theta" default="0.0"/>
+
+	<arg name="robot29_number" default="29"/>
+	<arg name="robot29_name" default="robot_$(arg robot29_number)"/>
+	<arg name="robot29_inicial_x" default="1.0"/>
+	<arg name="robot29_inicial_y" default="1.0"/>
+	<arg name="robot29_inicial_theta" default="0.0"/>
+
+	<arg name="robot30_number" default="30"/>
+	<arg name="robot30_name" default="robot_$(arg robot30_number)"/>
+	<arg name="robot30_inicial_x" default="1.0"/>
+	<arg name="robot30_inicial_y" default="1.0"/>
+	<arg name="robot30_inicial_theta" default="0.0"/>
+
+	<arg name="robot31_number" default="31"/>
+	<arg name="robot31_name" default="robot_$(arg robot31_number)"/>
+	<arg name="robot31_inicial_x" default="1.0"/>
+	<arg name="robot31_inicial_y" default="1.0"/>
+	<arg name="robot31_inicial_theta" default="0.0"/>
+
+	<arg name="robot32_number" default="32"/>
+	<arg name="robot32_name" default="robot_$(arg robot32_number)"/>
+	<arg name="robot32_inicial_x" default="1.0"/>
+	<arg name="robot32_inicial_y" default="1.0"/>
+	<arg name="robot32_inicial_theta" default="0.0"/>
+
+	<arg name="robot33_number" default="33"/>
+	<arg name="robot33_name" default="robot_$(arg robot33_number)"/>
+	<arg name="robot33_inicial_x" default="1.0"/>
+	<arg name="robot33_inicial_y" default="1.0"/>
+	<arg name="robot33_inicial_theta" default="0.0"/>
+
+	<arg name="robot34_number" default="34"/>
+	<arg name="robot34_name" default="robot_$(arg robot34_number)"/>
+	<arg name="robot34_inicial_x" default="1.0"/>
+	<arg name="robot34_inicial_y" default="1.0"/>
+	<arg name="robot34_inicial_theta" default="0.0"/>
+
+	<arg name="robot35_number" default="35"/>
+	<arg name="robot35_name" default="robot_$(arg robot35_number)"/>
+	<arg name="robot35_inicial_x" default="1.0"/>
+	<arg name="robot35_inicial_y" default="1.0"/>
+	<arg name="robot35_inicial_theta" default="0.0"/>
+
+	<arg name="robot36_number" default="36"/>
+	<arg name="robot36_name" default="robot_$(arg robot36_number)"/>
+	<arg name="robot36_inicial_x" default="1.0"/>
+	<arg name="robot36_inicial_y" default="1.0"/>
+	<arg name="robot36_inicial_theta" default="0.0"/>
+
+	<arg name="robot37_number" default="37"/>
+	<arg name="robot37_name" default="robot_$(arg robot37_number)"/>
+	<arg name="robot37_inicial_x" default="1.0"/>
+	<arg name="robot37_inicial_y" default="1.0"/>
+	<arg name="robot37_inicial_theta" default="0.0"/>
+
+	<arg name="robot38_number" default="38"/>
+	<arg name="robot38_name" default="robot_$(arg robot38_number)"/>
+	<arg name="robot38_inicial_x" default="1.0"/>
+	<arg name="robot38_inicial_y" default="1.0"/>
+	<arg name="robot38_inicial_theta" default="0.0"/>
+
+	<arg name="robot39_number" default="39"/>
+	<arg name="robot39_name" default="robot_$(arg robot39_number)"/>
+	<arg name="robot39_inicial_x" default="1.0"/>
+	<arg name="robot39_inicial_y" default="1.0"/>
+	<arg name="robot39_inicial_theta" default="0.0"/>
+
+	<arg name="robot40_number" default="40"/>
+	<arg name="robot40_name" default="robot_$(arg robot40_number)"/>
+	<arg name="robot40_inicial_x" default="1.0"/>
+	<arg name="robot40_inicial_y" default="1.0"/>
+	<arg name="robot40_inicial_theta" default="0.0"/>
+
+	<arg name="robot41_number" default="41"/>
+	<arg name="robot41_name" default="robot_$(arg robot41_number)"/>
+	<arg name="robot41_inicial_x" default="1.0"/>
+	<arg name="robot41_inicial_y" default="1.0"/>
+	<arg name="robot41_inicial_theta" default="0.0"/>
+
+	<arg name="robot42_number" default="42"/>
+	<arg name="robot42_name" default="robot_$(arg robot42_number)"/>
+	<arg name="robot42_inicial_x" default="1.0"/>
+	<arg name="robot42_inicial_y" default="1.0"/>
+	<arg name="robot42_inicial_theta" default="0.0"/>
+
+	<arg name="robot43_number" default="43"/>
+	<arg name="robot43_name" default="robot_$(arg robot43_number)"/>
+	<arg name="robot43_inicial_x" default="1.0"/>
+	<arg name="robot43_inicial_y" default="1.0"/>
+	<arg name="robot43_inicial_theta" default="0.0"/>
+
+	<arg name="robot44_number" default="44"/>
+	<arg name="robot44_name" default="robot_$(arg robot44_number)"/>
+	<arg name="robot44_inicial_x" default="1.0"/>
+	<arg name="robot44_inicial_y" default="1.0"/>
+	<arg name="robot44_inicial_theta" default="0.0"/>
+
+	<arg name="robot45_number" default="45"/>
+	<arg name="robot45_name" default="robot_$(arg robot45_number)"/>
+	<arg name="robot45_inicial_x" default="1.0"/>
+	<arg name="robot45_inicial_y" default="1.0"/>
+	<arg name="robot45_inicial_theta" default="0.0"/>
+
+	<arg name="robot46_number" default="46"/>
+	<arg name="robot46_name" default="robot_$(arg robot46_number)"/>
+	<arg name="robot46_inicial_x" default="1.0"/>
+	<arg name="robot46_inicial_y" default="1.0"/>
+	<arg name="robot46_inicial_theta" default="0.0"/>
+
+	<arg name="robot47_number" default="47"/>
+	<arg name="robot47_name" default="robot_$(arg robot47_number)"/>
+	<arg name="robot47_inicial_x" default="1.0"/>
+	<arg name="robot47_inicial_y" default="1.0"/>
+	<arg name="robot47_inicial_theta" default="0.0"/>
+
+	<arg name="robot48_number" default="48"/>
+	<arg name="robot48_name" default="robot_$(arg robot48_number)"/>
+	<arg name="robot48_inicial_x" default="1.0"/>
+	<arg name="robot48_inicial_y" default="1.0"/>
+	<arg name="robot48_inicial_theta" default="0.0"/>
+
+	<arg name="robot49_number" default="49"/>
+	<arg name="robot49_name" default="robot_$(arg robot49_number)"/>
+	<arg name="robot49_inicial_x" default="1.0"/>
+	<arg name="robot49_inicial_y" default="1.0"/>
+	<arg name="robot49_inicial_theta" default="0.0"/>
+
+	<arg name="robot50_number" default="50"/>
+	<arg name="robot50_name" default="robot_$(arg robot50_number)"/>
+	<arg name="robot50_inicial_x" default="1.0"/>
+	<arg name="robot50_inicial_y" default="1.0"/>
+	<arg name="robot50_inicial_theta" default="0.0"/>
+
+	<arg name="robot51_number" default="51"/>
+	<arg name="robot51_name" default="robot_$(arg robot51_number)"/>
+	<arg name="robot51_inicial_x" default="1.0"/>
+	<arg name="robot51_inicial_y" default="1.0"/>
+	<arg name="robot51_inicial_theta" default="0.0"/>
+
+	<arg name="robot52_number" default="52"/>
+	<arg name="robot52_name" default="robot_$(arg robot52_number)"/>
+	<arg name="robot52_inicial_x" default="1.0"/>
+	<arg name="robot52_inicial_y" default="1.0"/>
+	<arg name="robot52_inicial_theta" default="0.0"/>
+
+	<arg name="robot53_number" default="53"/>
+	<arg name="robot53_name" default="robot_$(arg robot53_number)"/>
+	<arg name="robot53_inicial_x" default="1.0"/>
+	<arg name="robot53_inicial_y" default="1.0"/>
+	<arg name="robot53_inicial_theta" default="0.0"/>
+
+	<arg name="robot54_number" default="54"/>
+	<arg name="robot54_name" default="robot_$(arg robot54_number)"/>
+	<arg name="robot54_inicial_x" default="1.0"/>
+	<arg name="robot54_inicial_y" default="1.0"/>
+	<arg name="robot54_inicial_theta" default="0.0"/>
+
+	<arg name="robot55_number" default="55"/>
+	<arg name="robot55_name" default="robot_$(arg robot55_number)"/>
+	<arg name="robot55_inicial_x" default="1.0"/>
+	<arg name="robot55_inicial_y" default="1.0"/>
+	<arg name="robot55_inicial_theta" default="0.0"/>
+
+	<arg name="robot56_number" default="56"/>
+	<arg name="robot56_name" default="robot_$(arg robot56_number)"/>
+	<arg name="robot56_inicial_x" default="1.0"/>
+	<arg name="robot56_inicial_y" default="1.0"/>
+	<arg name="robot56_inicial_theta" default="0.0"/>
+
+	<arg name="robot57_number" default="57"/>
+	<arg name="robot57_name" default="robot_$(arg robot57_number)"/>
+	<arg name="robot57_inicial_x" default="1.0"/>
+	<arg name="robot57_inicial_y" default="1.0"/>
+	<arg name="robot57_inicial_theta" default="0.0"/>
+
+	<arg name="robot58_number" default="58"/>
+	<arg name="robot58_name" default="robot_$(arg robot58_number)"/>
+	<arg name="robot58_inicial_x" default="1.0"/>
+	<arg name="robot58_inicial_y" default="1.0"/>
+	<arg name="robot58_inicial_theta" default="0.0"/>
+
+	<arg name="robot59_number" default="59"/>
+	<arg name="robot59_name" default="robot_$(arg robot59_number)"/>
+	<arg name="robot59_inicial_x" default="1.0"/>
+	<arg name="robot59_inicial_y" default="1.0"/>
+	<arg name="robot59_inicial_theta" default="0.0"/>
+
+	<arg name="robot60_number" default="60"/>
+	<arg name="robot60_name" default="robot_$(arg robot60_number)"/>
+	<arg name="robot60_inicial_x" default="1.0"/>
+	<arg name="robot60_inicial_y" default="1.0"/>
+	<arg name="robot60_inicial_theta" default="0.0"/>
+
+	<arg name="robot61_number" default="61"/>
+	<arg name="robot61_name" default="robot_$(arg robot61_number)"/>
+	<arg name="robot61_inicial_x" default="1.0"/>
+	<arg name="robot61_inicial_y" default="1.0"/>
+	<arg name="robot61_inicial_theta" default="0.0"/>
+
+	<arg name="robot62_number" default="62"/>
+	<arg name="robot62_name" default="robot_$(arg robot62_number)"/>
+	<arg name="robot62_inicial_x" default="1.0"/>
+	<arg name="robot62_inicial_y" default="1.0"/>
+	<arg name="robot62_inicial_theta" default="0.0"/>
+
+	<arg name="robot63_number" default="63"/>
+	<arg name="robot63_name" default="robot_$(arg robot63_number)"/>
+	<arg name="robot63_inicial_x" default="1.0"/>
+	<arg name="robot63_inicial_y" default="1.0"/>
+	<arg name="robot63_inicial_theta" default="0.0"/>
+
+	<param name="/use_sim_time" value="true"/>
+
+	<include file="$(find simulator)/launch/stage.launch">
+		<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+		<arg name="map" value="$(arg map)"/>
+	</include>
+	
+	<include file="$(find simulator)/launch/simulator.launch">
+		<arg name="iterations" value="$(arg iterations)"/>
+		<arg name="frequency" value="$(arg frequency)"/>
+		<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+	</include>
+
+	<include file="$(find aap_map_merger)/launch/aap_map_merger.launch">
+		<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+		<arg name="frequency" value="$(arg frequency)"/>
+		<arg name="merge_frequency" value="$(arg mapmerger_frequency)"/>
+		<arg name="resolution" value="$(arg resolution)"/>
+		<arg name="height" value="$(arg height)"/>
+		<arg name="length" value="$(arg length)"/>
+		<arg name="robot_radius" value="$(arg robot_radius)"/>
+		<arg name="comunication" value="$(arg file_comunication)"/>
+		<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+		<arg name="real" value="0"/>
+	</include>
+
+	<group if="$(arg combined_gui)">
+		<include file="$(find simulator)/launch/rviz.launch">
+			<arg name="robot_name" value="combined"/>
+			<arg name="state_publisher" value="false"/>
+			<arg name="show_gui" value="$(arg combined_gui)"/>
+		</include>
+	</group>
+	
+	<include file="$(find simulator)/launch/simulated_robot.launch"> 
+		<arg name="robot_number" value="$(arg robot0_number)"/>
+		<arg name="robot_name" value="$(arg robot0_name)"/>
+		<arg name="robot_inicial_x" value="$(arg robot0_inicial_x)"/>
+		<arg name="robot_inicial_y" value="$(arg robot0_inicial_y)"/>
+		<arg name="robot_inicial_theta" value="$(arg robot0_inicial_theta)"/>
+		<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+		<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+		<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+		<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+		<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+		<arg name="frequency" value="$(arg frequency)"/>
+		<arg name="resolution" value="$(arg resolution)"/>
+		<arg name="height" value="$(arg height)"/>
+		<arg name="length" value="$(arg length)"/>
+		<arg name="robot_radius" value="$(arg robot_radius)"/>
+		<arg name="comunication" value="$(arg file_comunication)"/>
+		<arg name="real" value="0"/>
+		<arg name="laser_topic" value="$(arg laser_topic)"/>
+		<arg name="laser_frame" value="$(arg laser_frame)"/>
+	</include>
+	
+	<include file="$(find simulator)/launch/simulated_robot.launch"> 
+		<arg name="robot_number" value="$(arg robot1_number)"/>
+		<arg name="robot_name" value="$(arg robot1_name)"/>
+		<arg name="robot_inicial_x" value="$(arg robot1_inicial_x)"/>
+		<arg name="robot_inicial_y" value="$(arg robot1_inicial_y)"/>
+		<arg name="robot_inicial_theta" value="$(arg robot1_inicial_theta)"/>
+		<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+		<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+		<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+		<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+		<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+		<arg name="frequency" value="$(arg frequency)"/>
+		<arg name="resolution" value="$(arg resolution)"/>
+		<arg name="height" value="$(arg height)"/>
+		<arg name="length" value="$(arg length)"/>
+		<arg name="robot_radius" value="$(arg robot_radius)"/>
+		<arg name="comunication" value="$(arg file_comunication)"/>
+		<arg name="real" value="0"/>
+		<arg name="laser_topic" value="$(arg laser_topic)"/>
+		<arg name="laser_frame" value="$(arg laser_frame)"/>
+	</include>
+
+	<group if="$(arg robot2_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot2_number)"/>
+			<arg name="robot_name" value="$(arg robot2_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot2_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot2_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot2_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot3_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot3_number)"/>
+			<arg name="robot_name" value="$(arg robot3_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot3_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot3_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot3_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot4_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot4_number)"/>
+			<arg name="robot_name" value="$(arg robot4_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot4_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot4_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot4_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot5_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot5_number)"/>
+			<arg name="robot_name" value="$(arg robot5_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot5_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot5_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot5_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot6_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot6_number)"/>
+			<arg name="robot_name" value="$(arg robot6_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot6_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot6_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot6_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot7_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot7_number)"/>
+			<arg name="robot_name" value="$(arg robot7_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot7_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot7_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot7_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot8_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot8_number)"/>
+			<arg name="robot_name" value="$(arg robot8_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot8_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot8_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot8_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot9_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot9_number)"/>
+			<arg name="robot_name" value="$(arg robot9_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot9_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot9_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot9_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot10_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot10_number)"/>
+			<arg name="robot_name" value="$(arg robot10_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot10_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot10_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot10_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot11_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot11_number)"/>
+			<arg name="robot_name" value="$(arg robot11_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot11_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot11_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot11_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot12_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot12_number)"/>
+			<arg name="robot_name" value="$(arg robot12_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot12_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot12_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot12_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot13_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot13_number)"/>
+			<arg name="robot_name" value="$(arg robot13_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot13_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot13_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot13_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot14_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot14_number)"/>
+			<arg name="robot_name" value="$(arg robot14_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot14_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot14_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot14_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot15_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot15_number)"/>
+			<arg name="robot_name" value="$(arg robot15_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot15_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot15_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot15_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot16_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot16_number)"/>
+			<arg name="robot_name" value="$(arg robot16_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot16_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot16_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot16_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot17_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot17_number)"/>
+			<arg name="robot_name" value="$(arg robot17_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot17_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot17_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot17_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot18_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot18_number)"/>
+			<arg name="robot_name" value="$(arg robot18_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot18_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot18_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot18_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot19_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot19_number)"/>
+			<arg name="robot_name" value="$(arg robot19_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot19_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot19_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot19_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot20_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot20_number)"/>
+			<arg name="robot_name" value="$(arg robot20_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot20_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot20_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot20_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot21_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot21_number)"/>
+			<arg name="robot_name" value="$(arg robot21_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot21_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot21_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot21_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot22_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot22_number)"/>
+			<arg name="robot_name" value="$(arg robot22_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot22_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot22_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot22_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot23_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot23_number)"/>
+			<arg name="robot_name" value="$(arg robot23_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot23_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot23_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot23_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot24_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot24_number)"/>
+			<arg name="robot_name" value="$(arg robot24_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot24_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot24_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot24_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot25_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot25_number)"/>
+			<arg name="robot_name" value="$(arg robot25_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot25_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot25_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot25_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot26_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot26_number)"/>
+			<arg name="robot_name" value="$(arg robot26_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot26_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot26_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot26_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot27_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot27_number)"/>
+			<arg name="robot_name" value="$(arg robot27_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot27_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot27_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot27_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot28_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot28_number)"/>
+			<arg name="robot_name" value="$(arg robot28_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot28_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot28_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot28_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot29_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot29_number)"/>
+			<arg name="robot_name" value="$(arg robot29_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot29_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot29_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot29_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot30_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot30_number)"/>
+			<arg name="robot_name" value="$(arg robot30_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot30_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot30_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot30_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot31_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot31_number)"/>
+			<arg name="robot_name" value="$(arg robot31_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot31_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot31_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot31_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot32_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot32_number)"/>
+			<arg name="robot_name" value="$(arg robot32_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot32_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot32_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot32_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot33_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot33_number)"/>
+			<arg name="robot_name" value="$(arg robot33_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot33_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot33_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot33_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot34_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot34_number)"/>
+			<arg name="robot_name" value="$(arg robot34_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot34_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot34_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot34_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot35_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot35_number)"/>
+			<arg name="robot_name" value="$(arg robot35_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot35_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot35_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot35_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot36_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot36_number)"/>
+			<arg name="robot_name" value="$(arg robot36_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot36_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot36_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot36_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot37_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot37_number)"/>
+			<arg name="robot_name" value="$(arg robot37_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot37_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot37_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot37_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot38_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot38_number)"/>
+			<arg name="robot_name" value="$(arg robot38_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot38_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot38_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot38_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot39_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot39_number)"/>
+			<arg name="robot_name" value="$(arg robot39_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot39_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot39_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot39_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot40_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot40_number)"/>
+			<arg name="robot_name" value="$(arg robot40_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot40_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot40_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot40_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot41_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot41_number)"/>
+			<arg name="robot_name" value="$(arg robot41_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot41_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot41_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot41_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot42_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot42_number)"/>
+			<arg name="robot_name" value="$(arg robot42_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot42_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot42_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot42_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot43_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot43_number)"/>
+			<arg name="robot_name" value="$(arg robot43_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot43_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot43_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot43_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot44_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot44_number)"/>
+			<arg name="robot_name" value="$(arg robot44_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot44_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot44_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot44_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot45_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot45_number)"/>
+			<arg name="robot_name" value="$(arg robot45_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot45_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot45_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot45_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot46_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot46_number)"/>
+			<arg name="robot_name" value="$(arg robot46_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot46_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot46_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot46_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot47_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot47_number)"/>
+			<arg name="robot_name" value="$(arg robot47_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot47_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot47_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot47_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot48_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot48_number)"/>
+			<arg name="robot_name" value="$(arg robot48_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot48_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot48_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot48_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot49_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot49_number)"/>
+			<arg name="robot_name" value="$(arg robot49_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot49_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot49_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot49_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot50_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot50_number)"/>
+			<arg name="robot_name" value="$(arg robot50_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot50_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot50_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot50_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot51_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot51_number)"/>
+			<arg name="robot_name" value="$(arg robot51_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot51_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot51_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot51_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot52_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot52_number)"/>
+			<arg name="robot_name" value="$(arg robot52_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot52_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot52_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot52_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot53_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot53_number)"/>
+			<arg name="robot_name" value="$(arg robot53_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot53_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot53_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot53_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot54_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot54_number)"/>
+			<arg name="robot_name" value="$(arg robot54_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot54_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot54_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot54_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot55_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot55_number)"/>
+			<arg name="robot_name" value="$(arg robot55_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot55_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot55_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot55_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot56_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot56_number)"/>
+			<arg name="robot_name" value="$(arg robot56_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot56_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot56_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot56_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot57_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot57_number)"/>
+			<arg name="robot_name" value="$(arg robot57_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot57_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot57_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot57_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot58_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot58_number)"/>
+			<arg name="robot_name" value="$(arg robot58_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot58_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot58_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot58_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot59_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot59_number)"/>
+			<arg name="robot_name" value="$(arg robot59_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot59_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot59_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot59_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot60_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot60_number)"/>
+			<arg name="robot_name" value="$(arg robot60_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot60_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot60_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot60_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot61_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot61_number)"/>
+			<arg name="robot_name" value="$(arg robot61_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot61_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot61_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot61_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot62_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot62_number)"/>
+			<arg name="robot_name" value="$(arg robot62_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot62_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot62_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot62_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+
+	<group if="$(arg robot63_on)">
+		<include file="$(find simulator)/launch/simulated_robot.launch"> 
+			<arg name="robot_number" value="$(arg robot63_number)"/>
+			<arg name="robot_name" value="$(arg robot63_name)"/>
+			<arg name="robot_inicial_x" value="$(arg robot63_inicial_x)"/>
+			<arg name="robot_inicial_y" value="$(arg robot63_inicial_y)"/>
+			<arg name="robot_inicial_theta" value="$(arg robot63_inicial_theta)"/>
+			<arg name="exploration_frequency" value="$(arg exploration_frequency)"/>
+			<arg name="exploration_algorithm" value="$(arg exploration_algorithm)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="indiviual_gui" value="$(arg indiviual_gui)"/>
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="comunication" value="$(arg file_comunication)"/>
+			<arg name="real" value="0"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+	</group>
+		
+</launch>

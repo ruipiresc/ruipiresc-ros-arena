@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+	
+  	<arg name="number_of_robots"/>
+	<arg name="frequency"/>
+	<arg name="merge_frequency"/>
+	<arg name="resolution"/>
+	<arg name="height"/>
+	<arg name="length"/>
+	<arg name="robot_radius"/>
+	<arg name="comunication"/>
+	<arg name="path_to_arena"/>
+	<arg name="real"/>
+
+	<node pkg="aap_map_merger" type="aap_map_merger" name="aap_map_merger" output="screen">
+		<param name="number_of_robots" value="$(arg number_of_robots)"/>
+		<param name="frequency" value="$(arg frequency)"/>
+		<param name="merge_frequency" value="$(arg merge_frequency)"/>
+		<param name="resolution" value="$(arg resolution)"/>
+		<param name="height" value="$(arg height)"/>
+		<param name="length" value="$(arg length)"/>
+		<param name="robot_radius" value="$(arg robot_radius)"/>
+		<param name="comunication" value="$(arg comunication)"/>
+		<param name="path" type="string" value="$(arg path_to_arena)"/>
+		<param name="real" value="$(arg real)"/>
+	</node>
+
+</launch>

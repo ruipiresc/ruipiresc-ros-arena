@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="frequency"/>
+	<arg name="number_of_robots"/>
+	<arg name="robot_radius"/>
+
+	<arg name="exploration_frequency"/>
+	<arg name="exploration_algorithm"/>
+	<arg name="comunication"/>
+
+	<arg name="indiviual_gui"/>
+
+	<arg name="resolution"/>
+	<arg name="height"/>
+	<arg name="length"/>
+
+	<arg name="laser_topic"/>
+	<arg name="laser_frame"/>
+
+	<arg name="robot_number"/>
+	<arg name="robot_name" />
+	<arg name="robot_inicial_x"/>
+	<arg name="robot_inicial_y"/>
+	<arg name="robot_inicial_theta"/>
+
+	<arg name="path_to_arena"/>
+	<arg name="real"/>
+
+	<arg name="mapping_start_time" default="3.0"/>
+	<arg name="frontiers_start_time" default="6.0"/>
+	<arg name="exploration_algorithms_start_time" default="9.0"/>
+
+	<group ns="$(arg robot_name)">  
+
+		<param name="tf_prefix" value="$(arg robot_name)"/>
+
+		<include file="$(find aap_mapping)/launch/aap_mapping.launch">
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="robot_number" value="$(arg robot_number)"/>
+			<arg name="robot_name" value="$(arg robot_name)"/>
+			<arg name="inicial_x" value="$(arg robot_inicial_x)"/>
+			<arg name="inicial_y" value="$(arg robot_inicial_y)"/>
+			<arg name="inicial_theta" value="$(arg robot_inicial_theta)"/>
+			<arg name="start_time" value="$(arg mapping_start_time)"/>
+			<arg name="comunication" value="$(arg comunication)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="real" value="$(arg real)"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+
+		<!--<include file="$(find simulator)/launch/amcl.launch">
+			<arg name="robot_name" value="$(arg robot_name)"/>
+		</include>-->
+
+		<include file="$(find simulator)/launch/move_base.launch">
+			<arg name="robot_name" value="$(arg robot_name)"/>
+			<arg name="laser_topic" value="$(arg laser_topic)"/>
+			<arg name="laser_frame" value="$(arg laser_frame)"/>
+		</include>
+
+		<include file="$(find aap_frontiers)/launch/aap_frontiers.launch">
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg exploration_frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="robot_number" value="$(arg robot_number)"/>
+			<arg name="robot_name" value="$(arg robot_name)"/>
+			<arg name="inicial_x" value="$(arg robot_inicial_x)"/>
+			<arg name="inicial_y" value="$(arg robot_inicial_y)"/>
+			<arg name="inicial_theta" value="$(arg robot_inicial_theta)"/>
+			<arg name="comunication" value="$(arg comunication)"/>
+			<arg name="start_time" value="$(arg frontiers_start_time)"/>
+			<arg name="real" value="$(arg real)"/>
+		</include>
+
+		<include file="$(arg path_to_arena)/algorithms/$(arg exploration_algorithm)/launch/$(arg exploration_algorithm).launch">
+			<arg name="number_of_robots" value="$(arg number_of_robots)"/>
+			<arg name="frequency" value="$(arg exploration_frequency)"/>
+			<arg name="resolution" value="$(arg resolution)"/>
+			<arg name="height" value="$(arg height)"/>
+			<arg name="length" value="$(arg length)"/>
+			<arg name="robot_radius" value="$(arg robot_radius)"/>
+			<arg name="robot_number" value="$(arg robot_number)"/>
+			<arg name="robot_name" value="$(arg robot_name)"/>
+			<arg name="inicial_x" value="$(arg robot_inicial_x)"/>
+			<arg name="inicial_y" value="$(arg robot_inicial_y)"/>
+			<arg name="inicial_theta" value="$(arg robot_inicial_theta)"/>
+			<arg name="start_time" value="$(arg exploration_algorithms_start_time)"/>
+			<arg name="comunication" value="$(arg comunication)"/>
+			<arg name="path_to_arena" value="$(arg path_to_arena)"/>
+			<arg name="real" value="$(arg real)"/>
+		</include>
+
+		<include file="$(find simulator)/launch/rviz.launch">
+			<arg name="robot_name" value="$(arg robot_name)"/>
+			<arg name="state_publisher" value="true"/>
+			<arg name="show_gui" value="$(arg indiviual_gui)"/>
+		</include>
+		
+	</group>
+	
+</launch>
