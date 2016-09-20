@@ -14,7 +14,7 @@ Notes:
 --------------
 * Before the first launch you should change the "path_to_arena" param to your path to arena, should be something like this
 
-	<arg name="path_to_arena" default="/home/your_username/your_ws/src/arena"/>
+	arg name="path_to_arena" default="/home/your_username/your_ws/src/arena"/
 
 * Is required a full instalation of ROS Indigo on Ubuntu 14.04 or higher
 
