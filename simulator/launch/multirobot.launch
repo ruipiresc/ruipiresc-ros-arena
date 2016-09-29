@@ -91,27 +91,27 @@
 
 	<arg name="robot0_number" default="0"/>
 	<arg name="robot0_name" default="robot_$(arg robot0_number)"/>
-	<arg name="robot0_inicial_x" default="-8.5"/>
+	<arg name="robot0_inicial_x" default="8.5"/>
 	<arg name="robot0_inicial_y" default="8.5"/>
-	<arg name="robot0_inicial_theta" default="90.0"/>
+	<arg name="robot0_inicial_theta" default="135.0"/>
 
 	<arg name="robot1_number" default="1"/>
 	<arg name="robot1_name" default="robot_$(arg robot1_number)"/>
-	<arg name="robot1_inicial_x" default="8.5"/>
+	<arg name="robot1_inicial_x" default="-8.5"/>
 	<arg name="robot1_inicial_y" default="8.5"/>
-	<arg name="robot1_inicial_theta" default="90.0"/>
+	<arg name="robot1_inicial_theta" default="45.0"/>
 
 	<arg name="robot2_number" default="2"/>
 	<arg name="robot2_name" default="robot_$(arg robot2_number)"/>
-	<arg name="robot2_inicial_x" default="18.5"/>
-	<arg name="robot2_inicial_y" default="1.5"/>
-	<arg name="robot2_inicial_theta" default="135.0"/>
+	<arg name="robot2_inicial_x" default="8.5"/>
+	<arg name="robot2_inicial_y" default="-8.5"/>
+	<arg name="robot2_inicial_theta" default="-45.0"/>
 
 	<arg name="robot3_number" default="3"/>
 	<arg name="robot3_name" default="robot_$(arg robot3_number)"/>
-	<arg name="robot3_inicial_x" default="1.5"/>
-	<arg name="robot3_inicial_y" default="1.5"/>
-	<arg name="robot3_inicial_theta" default="45.0"/>
+	<arg name="robot3_inicial_x" default="-8.5"/>
+	<arg name="robot3_inicial_y" default="-8.5"/>
+	<arg name="robot3_inicial_theta" default="-135.0"/>
 
 	<arg name="robot4_number" default="4"/>
 	<arg name="robot4_name" default="robot_$(arg robot4_number)"/>
